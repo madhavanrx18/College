@@ -1,19 +1,15 @@
-#include <iostream>
-
-#include <cstring>
-
-using namespace std;
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-
-char str[50];
-
-strncpy(str, "This is a bounded string now", sizeof(str) - 1);
-
-str[sizeof(str) - 1] = '\0';
-
-cout << str << endl;
-
-return 0;
-
+    char src[] = "Vanakkam da mapla";
+    //Buffer overflow , use strncpy
+    char dest2[6];  
+    strncpy(dest2, src,sizeof(dest2)-1);
+    dest2[sizeof(dest2)-1] = '\0';
+    printf("Mitigated: %s\n", dest2);
+    
+    char dest1[5];  
+    strcpy(dest1, src);  
+    printf("Vulnerable: %s\n", dest1);
 }

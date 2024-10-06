@@ -4,6 +4,6 @@ void main() {
     char str[5] = "hello";  // Incorrect: bound specified is too small
     printf("%s\n", str);
 
-    char strc[]="fuck u ";
+    char strc[]="that what she said ";
     printf("%s\n",strc);
 }
